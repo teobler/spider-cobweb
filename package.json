@@ -1,0 +1,24 @@
+{
+  "name": "spiderUI",
+  "version": "1.0.0",
+  "description": "spider UI -- an UI for patch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teobler/spiderUI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teobler/spiderUI/issues"
+  },
+  "homepage": "https://github.com/teobler/spiderUI#readme",
+  "devDependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  }
+}
