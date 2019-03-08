@@ -29,3 +29,16 @@
     2. 如果某个缩写是行业共识，则可以使用，如 html、dom
         1. 但是如果这些缩写需要大写，请只大写第一个字母，如 renderHtml 对，renderHTML 错
     0. 禁止用 2 表示 to，如 string2Date 必须写成 stringToDate
+
+## commit message
+commit message采用简易版的Angular团队规范，在明确改动的同时方便生成change log
+
+1. feat：新功能（feature）
+2. fix：修补bug
+3. docs：文档（documentation）
+4. style： 格式（不影响代码运行的变动）
+5. refactor：重构（即不是新增功能，也不是修改bug的代码变动）
+6. test：增加测试
+7. chore：构建过程或辅助工具的变动
+
+commit采用小步提交原则，一句话的commit message需要将清楚该次commit做了什么改动
