@@ -69,3 +69,6 @@ typings/
 */.DS_Store
 .AppleDouble
 .LSOverride
+
+# package
+/dist/*
