@@ -1,3 +1,5 @@
-const div = document.createElement('div');
-div.innerText = 'test div';
-document.body.appendChild(div);
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Button from './Button';
+
+ReactDOM.render(<Button/>, document.getElementById('root'));
