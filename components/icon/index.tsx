@@ -1,7 +1,7 @@
 import React from 'react';
+import combineClass from '../../utils/combineClass';
 import '../../utils/imoprtAllIcons';
 import './index.scss';
-import combineClass from '../../utils/combineClass';
 
 interface IconProps extends React.SVGAttributes<SVGElement> {
   name: string;
@@ -11,7 +11,7 @@ const Icon: React.FunctionComponent<IconProps> = (props) => {
   const { className, name, ...restProps } = props;
 
   return (
-    <svg className={combineClass('spider-icon', className)}
+    <svg className={combineClass('icon', className)}
          {...restProps}>
       <use xlinkHref={`#${name}`}/>
     </svg>
