@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../resources/wechat.svg';
+import '../../utils/imoprtAllIcons';
 
 interface IconProps {
   name: string;
