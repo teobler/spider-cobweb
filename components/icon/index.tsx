@@ -1,6 +1,6 @@
 import React from 'react';
 import combineClass from '../../utils/combineClass';
-import '../../utils/imoprtAllIcons';
+import '../../utils/importAllIcons';
 import './index.scss';
 
 interface IconProps extends React.SVGAttributes<SVGElement> {

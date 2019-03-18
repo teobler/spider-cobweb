@@ -1,4 +1,4 @@
-import { RequireContext, require } from '../types/customer';
+import { RequireContext } from '../types/customer';
 
 const importAll = (requireContext: RequireContext) => requireContext.keys().forEach(requireContext);
 const fileType = new RegExp(/\.svg$/);
