@@ -3,7 +3,27 @@
 module.exports = {
   verbose: true,
   clearMocks: false,
-  collectCoverage: false,
+  collectCoverage: true,
+  coverageDirectory: "reports",
+  coverageThreshold: {
+    global: {
+      branches: 90,
+      functions: 90,
+      lines: 90,
+      statements: 90
+    }
+  },
+  collectCoverageFrom: [
+    "**/components/**/*.{ts,tsx}",
+    "**/utils/**/*.{ts,tsx}",
+    "!**/components/**/*.d.{ts,tsx}",
+    "!**/components/index.tsx",
+    "!**/node_modules/**",
+  ],
+  "coverageReporters": [
+    "html",
+    "text-summary"
+  ],
   reporters: ['default'],
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'd.ts'],
   moduleDirectories: ['node_modules', 'include'],
