@@ -20,6 +20,7 @@ module.exports = {
     "!**/components/index.tsx",
     "!**/node_modules/**",
     "!**/components/constants.ts",
+    "!**/components/App.tsx",
   ],
   "coverageReporters": [
     "html",
