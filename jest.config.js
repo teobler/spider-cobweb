@@ -19,6 +19,7 @@ module.exports = {
     "!**/components/**/*.d.{ts,tsx}",
     "!**/components/index.tsx",
     "!**/node_modules/**",
+    "!**/components/constants.ts",
   ],
   "coverageReporters": [
     "html",

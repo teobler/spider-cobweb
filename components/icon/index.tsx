@@ -1,17 +1,20 @@
 import React from 'react';
 import combineClass from '../../utils/combineClass';
+import { CLASS_PREFIX } from '../constants';
 import '../../utils/importAllIcons';
 import './index.scss';
 
-interface IconProps extends React.SVGAttributes<SVGElement> {
+interface IIconProps extends React.SVGAttributes<SVGElement> {
   name: string;
+  spin?: boolean;
 }
 
-const Icon: React.FunctionComponent<IconProps> = (props) => {
-  const { className, name, ...restProps } = props;
+const Icon: React.FunctionComponent<IIconProps> = (props) => {
+  const { className, name, spin, ...restProps } = props;
+  const spinClass = spin || name === 'loading' ? CLASS_PREFIX + 'spin' : '';
 
   return (
-    <svg className={combineClass('icon', className)}
+    <svg className={combineClass('icon', spinClass, className)}
          {...restProps}>
       <use xlinkHref={`#${name}`}/>
     </svg>

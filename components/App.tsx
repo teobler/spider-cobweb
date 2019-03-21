@@ -4,7 +4,7 @@ import Icon from './icon';
 const App: React.FunctionComponent = () => {
   return (
     <div>
-      <Icon name="wechat"/>
+      <Icon name='loading'/>
     </div>
   );
 };
