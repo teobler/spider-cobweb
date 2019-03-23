@@ -39,5 +39,5 @@ module.exports = {
     '^.spec+\\.(js|jsx)$': 'babel-jest',
     '^.+\\.(ts|tsx)$': '<rootDir>test/transform.ts',
   },
-  setupFilesAfterEnv: ['<rootDir>test/setupTests.ts'],
+  setupFilesAfterEnv: ['<rootDir>test/setUpTests.ts'],
 };
