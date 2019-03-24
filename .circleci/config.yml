@@ -6,6 +6,12 @@ defaults: &defaults
   docker:
     - image: circleci/node:10
 
+master_only: &master_only
+  filters:
+    branches:
+      only:
+        - master
+
 version: 2
 jobs:
   prepare:
@@ -49,14 +55,34 @@ jobs:
       - store_test_results:
           path: test-results
 
+  release:
+    <<: *defaults
+    steps:
+      - checkout
+#      - attach_workspace:
+#          at: .
+#      - run: npm run ci
+#      - store_test_results:
+#          path: test-results
+
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - prepare
+      - prepare:
+          <<: *master_only
       - test:
+          <<: *master_only
           requires:
             - prepare
       - build:
+          <<: *master_only
           requires:
             - test
+      - hold:
+          type: approval
+          requires:
+            - build
+      - release:
+          requires:
+            - hold
