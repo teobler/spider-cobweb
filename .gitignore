@@ -75,3 +75,4 @@ typings/
 
 # test reports
 /reports/*
+/test-results/

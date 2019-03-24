@@ -26,7 +26,7 @@ module.exports = {
     "html",
     "text-summary"
   ],
-  reporters: ['default'],
+  reporters: ['default', "jest-junit"],
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'd.ts'],
   moduleDirectories: ['node_modules', 'include'],
   moduleNameMapper: {
