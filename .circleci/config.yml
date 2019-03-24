@@ -54,9 +54,9 @@ workflows:
   build_and_test:
     jobs:
       - prepare
-      - build:
-          requires:
-            - prepare
       - test:
           requires:
             - prepare
+      - build:
+          requires:
+            - test
