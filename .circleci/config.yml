@@ -11,6 +11,8 @@ master_only: &master_only
     branches:
       only:
         - master
+    tags:
+      only: /^v(\d+\.)(\d+\.)(\d+)$/
 
 version: 2
 jobs:
@@ -58,19 +60,17 @@ jobs:
       - store_test_results:
           path: test-results
 
-  release:
+  publish:
     <<: *defaults
     steps:
       - checkout
-#      - attach_workspace:
-#          at: .
-#      - run: npm run ci
-#      - store_test_results:
-#          path: test-results
+      - attach_workspace:
+          at: .
+      - run: npm publish
 
 workflows:
   version: 2
-  build_and_test:
+  hotpot:
     jobs:
       - prepare:
           <<: *master_only
@@ -82,10 +82,11 @@ workflows:
           <<: *master_only
           requires:
             - test
-      - hold:
-          type: approval
+      - publish:
+          filters:
+            tags:
+              only: /^v(\d+\.)(\d+\.)(\d+)$/
+            branches:
+              ignore: /.*/
           requires:
             - build
-      - release:
-          requires:
-            - hold
