@@ -43,6 +43,9 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
+            - package.json
+            - LICENSE
+            - README.md
             - dist
 
   test:
