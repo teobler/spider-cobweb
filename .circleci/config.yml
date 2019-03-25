@@ -84,10 +84,11 @@ workflows:
           requires:
             - test
       - publish:
+          requires:
+            - build
           filters:
             tags:
               only: /^v(\d+\.)(\d+\.)(\d+)$/
             branches:
-              ignore: /.*/
-          requires:
-            - build
+              only:
+                - master
