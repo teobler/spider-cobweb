@@ -12,7 +12,7 @@ master_only: &master_only
       only:
         - master
     tags:
-      only: /^v(\d+\.)(\d+\.)(\d+)$/
+      ignore: /.*/
 
 version: 2
 jobs:
