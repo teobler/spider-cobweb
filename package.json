@@ -1,6 +1,6 @@
 {
   "name": "spiderUI",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "spider UI -- an UI for patch",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index",
