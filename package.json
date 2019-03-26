@@ -1,6 +1,6 @@
 {
   "name": "spider-test888",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "spider UI -- an UI for patch",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index",
