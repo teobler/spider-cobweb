@@ -10,7 +10,7 @@ master_only: &master_only
   filters:
     branches:
       only:
-       - master
+        - master
 
 release_only: &release_only
   filters:
@@ -76,6 +76,23 @@ jobs:
 
 workflows:
   version: 2.1
+  hotpot:
+      jobs:
+        - prepare:
+            <<: *release_only
+        - test:
+            <<: *release_only
+            requires:
+              - prepare
+        - build:
+            <<: *release_only
+            requires:
+              - test
+        - release:
+            <<: *release_only
+            requires:
+              - build
+
   lunch:
     jobs:
       - prepare:
@@ -88,20 +105,3 @@ workflows:
           <<: *master_only
           requires:
             - test
-
-  hotpot:
-    jobs:
-      - prepare:
-          <<: *release_only
-      - test:
-          <<: *release_only
-          requires:
-            - prepare
-      - build:
-          <<: *release_only
-          requires:
-            - test
-      - release:
-          <<: *release_only
-          requires:
-            - build
