@@ -15,7 +15,8 @@ master_only: &master_only
 release_only: &release_only
   filters:
     branches:
-      ignore: /.*/
+      only:
+        - master
     tags:
       only: /^v(\d+\.)(\d+\.)(\d+)$/
 
