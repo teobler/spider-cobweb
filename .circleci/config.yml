@@ -8,11 +8,16 @@ defaults: &defaults
 
 master_only: &master_only
   filters:
-    tags:
-      only: /^v(\d+\.)(\d+\.)(\d+)$/
     branches:
       only:
-        - master
+       - test/ci
+
+release_only: &release_only
+  filters:
+    branches:
+      ignore: /.*/
+    tags:
+      only: /^v(\d+\.)(\d+\.)(\d+)$/
 
 version: 2.1
 jobs:
@@ -71,7 +76,7 @@ jobs:
 
 workflows:
   version: 2.1
-  hotpot:
+  lunch:
     jobs:
       - prepare:
           <<: *master_only
@@ -83,11 +88,20 @@ workflows:
           <<: *master_only
           requires:
             - test
+
+  hotpot:
+    jobs:
+      - prepare:
+          <<: *release_only
+      - test:
+          <<: *release_only
+          requires:
+            - prepare
+      - build:
+          <<: *release_only
+          requires:
+            - test
       - release:
+          <<: *release_only
           requires:
             - build
-          filters:
-            tags:
-              only: /^v(\d+\.)(\d+\.)(\d+)$/
-            branches:
-              ignore: /.*/
