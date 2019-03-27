@@ -1,4 +1,4 @@
-# ![GitHub](https://img.shields.io/github/license/teobler/spider-cobweb.svg?style=plastic) ![npm](https://img.shields.io/npm/v/spider-cobweb.svg?color=green&style=plastic)
+# ![GitHub](https://img.shields.io/github/license/teobler/spider-cobweb.svg?color=blue&style=plastic) ![npm](https://img.shields.io/npm/v/spider-cobweb.svg?color=blue&style=plastic) ![CircleCI branch](https://img.shields.io/circleci/project/github/teobler/spider-cobweb/master.svg?label=circleci&style=plastic)
 
 ## 原则
 
