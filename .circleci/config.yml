@@ -85,7 +85,7 @@ workflows:
             <<: *master_only
             type: approval
             requires:
-              - test2
+              - test
         - release:
             <<: *master_only
             requires:
