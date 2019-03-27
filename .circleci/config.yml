@@ -12,14 +12,6 @@ master_only: &master_only
       only:
         - master
 
-release_only: &release_only
-  filters:
-    branches:
-      only:
-        - master
-    tags:
-      only: /^v(\d+\.)(\d+\.)(\d+)$/
-
 version: 2.1
 jobs:
   prepare:
@@ -80,29 +72,21 @@ workflows:
   hotpot:
       jobs:
         - prepare:
-            <<: *release_only
+            <<: *master_only
         - test:
-            <<: *release_only
+            <<: *master_only
             requires:
               - prepare
         - build:
-            <<: *release_only
+            <<: *master_only
             requires:
               - test
-        - release:
-            <<: *release_only
+        - hold:
+            <<: *master_only
+            type: approval
             requires:
-              - build
-
-  lunch:
-    jobs:
-      - prepare:
-          <<: *master_only
-      - test:
-          <<: *master_only
-          requires:
-            - prepare
-      - build:
-          <<: *master_only
-          requires:
-            - test
+              - test2
+        - release:
+            <<: *master_only
+            requires:
+              - hold
