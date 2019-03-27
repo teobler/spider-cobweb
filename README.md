@@ -1,4 +1,4 @@
-# spiderUI
+# ![GitHub](https://img.shields.io/github/license/teobler/spider-cobweb.svg?style=plastic) ![npm](https://img.shields.io/npm/v/spider-cobweb.svg?color=green&style=plastic)
 
 ## 原则
 
