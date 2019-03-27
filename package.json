@@ -1,7 +1,7 @@
 {
-  "name": "spider-test888",
-  "version": "0.0.14",
-  "description": "spider UI -- an UI for patch",
+  "name": "spider-cobweb",
+  "version": "0.0.1",
+  "description": "an UI library for patch",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index",
   "files": [
