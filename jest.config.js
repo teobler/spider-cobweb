@@ -23,6 +23,7 @@ module.exports = {
     "!**/components/App.tsx",
   ],
   "coverageReporters": [
+    "lcov",
     "html",
     "text-summary"
   ],
