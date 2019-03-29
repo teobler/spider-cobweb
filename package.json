@@ -16,15 +16,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/teobler/spiderUI.git"
+    "url": "git+https://github.com/teobler/spider-cobweb.git"
   },
   "keywords": [],
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test && npm run lint:fix"
+    }
+  },
   "author": "teobler",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/teobler/spiderUI/issues"
+    "url": "https://github.com/teobler/spider-cobweb/issues"
   },
-  "homepage": "https://github.com/teobler/spiderUI#readme",
+  "homepage": "https://github.com/teobler/spider-cobweb#readme",
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
@@ -50,6 +55,7 @@
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
+    "husky": "^1.3.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.3.1",
     "jest-haste-map": "^24.0.0",
