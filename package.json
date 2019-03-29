@@ -12,7 +12,8 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
     "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --config=jest.config.js --coverage && cat ./reports/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "lint:fix": "npx eslint --fix \"{components,utils}/**/*.ts{,x}\""
+    "lint:fix": "npx eslint --fix \"{components,utils}/**/*.ts{,x}\"",
+    "changelog": "conventional-changelog -p angular -o CHANGELOG.md -r 0"
   },
   "repository": {
     "type": "git",
@@ -46,6 +47,7 @@
     "babel-jest": "^24.3.1",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-preset-react-app": "^7.0.2",
+    "conventional-changelog-cli": "^2.0.12",
     "coveralls": "^3.0.3",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
