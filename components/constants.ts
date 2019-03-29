@@ -1,1 +1,1 @@
-export const CLASS_PREFIX: string = 'spider-';
+export const CLASS_PREFIX = 'spider-';

@@ -1,11 +1,7 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
-function Button() {
-  return (
-    <div>
-      button
-    </div>
-  );
-}
+const Button: React.FunctionComponent = (): ReactElement => {
+  return <div>button</div>;
+};
 
 export default Button;

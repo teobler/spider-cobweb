@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import Icon from './icon';
 
-const App: React.FunctionComponent = () => {
+const App: React.FunctionComponent = (): ReactElement => {
   return (
     <div>
-      <Icon name='loading'/>
+      <Icon name="loading" />
     </div>
   );
 };
