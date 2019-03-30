@@ -22,10 +22,6 @@ module.exports =  {
       { "ignore": "ignore", "customValidators": "customValidator" }
     ]
   },
-  overrides: {
-    files: ['components/**/*', 'utils/**/*'],
-    excludedFiles: ['*.config.js'],
-  },
   settings:  {
     react:  {
       version:  'detect',  // Tells eslint-plugin-react to automatically detect the version of React to use

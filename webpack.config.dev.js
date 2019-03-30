@@ -3,10 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = Object.assign({}, base, {
   mode: 'development',
+  entry: {
+    index: './admin/index.tsx',
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'SpiderUI - React',
+      title: 'spider-cobweb',
       template: 'index.html',
-    })
+    }),
   ],
 });

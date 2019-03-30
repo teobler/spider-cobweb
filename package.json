@@ -12,7 +12,7 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
     "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --config=jest.config.js --coverage && cat ./reports/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "lint:fix": "npx eslint --fix \"{components,utils}/**/*.ts{,x}\"",
+    "lint:fix": "npx eslint --fix \"{components,utils,admin}/**/*.ts{,x}\"",
     "changelog": "conventional-changelog -p angular -o CHANGELOG.md -r 0"
   },
   "repository": {

@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import Icon from './icon';
+import Icon from '../components/icon/index';
 
 const App: React.FunctionComponent = (): ReactElement => {
   return (

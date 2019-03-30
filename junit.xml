@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="10" failures="0" time="6.49">
-  <testsuite name="combineClass" errors="0" failures="0" skipped="0" timestamp="2019-03-29T10:01:27" time="2.091" tests="5">
+<testsuites name="jest tests" tests="10" failures="0" time="4.953">
+  <testsuite name="combineClass" errors="0" failures="0" skipped="0" timestamp="2019-03-29T14:23:12" time="1.596" tests="5">
     <testcase classname="combineClass should return prefixed string given only string" name="combineClass should return prefixed string given only string" time="0.004">
     </testcase>
-    <testcase classname="combineClass should return prefixed string given string and space" name="combineClass should return prefixed string given string and space" time="0.001">
+    <testcase classname="combineClass should return prefixed string given string and space" name="combineClass should return prefixed string given string and space" time="0">
     </testcase>
     <testcase classname="combineClass should return combined string given two strings" name="combineClass should return combined string given two strings" time="0">
     </testcase>
-    <testcase classname="combineClass should return combined string given a string and another combined string" name="combineClass should return combined string given a string and another combined string" time="0">
+    <testcase classname="combineClass should return combined string given a string and another combined string" name="combineClass should return combined string given a string and another combined string" time="0.001">
     </testcase>
-    <testcase classname="combineClass should return prefixed string given a string and undefined" name="combineClass should return prefixed string given a string and undefined" time="0.001">
+    <testcase classname="combineClass should return prefixed string given a string and undefined" name="combineClass should return prefixed string given a string and undefined" time="0">
     </testcase>
   </testsuite>
-  <testsuite name="button" errors="0" failures="0" skipped="0" timestamp="2019-03-29T10:01:27" time="2.821" tests="1">
+  <testsuite name="button" errors="0" failures="0" skipped="0" timestamp="2019-03-29T14:23:12" time="1.623" tests="1">
     <testcase classname="button should render a empty button" name="button should render a empty button" time="0.015">
     </testcase>
   </testsuite>
-  <testsuite name="icon" errors="0" failures="0" skipped="0" timestamp="2019-03-29T10:01:27" time="2.371" tests="4">
-    <testcase classname="icon should render a empty icon" name="icon should render a empty icon" time="0.019">
+  <testsuite name="icon" errors="0" failures="0" skipped="0" timestamp="2019-03-29T14:23:12" time="1.665" tests="4">
+    <testcase classname="icon should render a empty icon" name="icon should render a empty icon" time="0.016">
     </testcase>
-    <testcase classname="icon should not has spider-spin class without spin and loading" name="icon should not has spider-spin class without spin and loading" time="0.015">
+    <testcase classname="icon should not has spider-spin class without spin and loading" name="icon should not has spider-spin class without spin and loading" time="0.008">
     </testcase>
     <testcase classname="icon should has spider-spin class given spin is true" name="icon should has spider-spin class given spin is true" time="0.001">
     </testcase>
-    <testcase classname="icon should has spider-spin class given name is loading" name="icon should has spider-spin class given name is loading" time="0.002">
+    <testcase classname="icon should has spider-spin class given name is loading" name="icon should has spider-spin class given name is loading" time="0.001">
     </testcase>
   </testsuite>
 </testsuites>
