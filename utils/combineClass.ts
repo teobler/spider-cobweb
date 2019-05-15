@@ -1,8 +1,9 @@
-const combineClass = (...names: (string | undefined)[]): string => {
+const combineClass = (...names: string[]): string => {
   const prefix = 'spider-';
-  names[0] = prefix + names[0];
+  const resultName = names.slice(0);
+  resultName[0] = prefix + names[0];
 
-  return names
+  return resultName
     .filter(Boolean)
     .join(' ')
     .trim();

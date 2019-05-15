@@ -10,7 +10,7 @@ interface IconProps extends React.SVGAttributes<SVGElement> {
 }
 
 const Icon: React.FunctionComponent<IconProps> = (props): ReactElement => {
-  const { className, name, spin, ...restProps } = props;
+  const { className = '', name, spin, ...restProps } = props;
   const spinClass = spin || name === 'loading' ? CLASS_PREFIX + 'spin' : '';
 
   return (

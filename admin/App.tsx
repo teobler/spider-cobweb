@@ -1,7 +1,12 @@
 import React, { ReactElement } from 'react';
 import { HashRouter as Router, Link, Route } from 'react-router-dom';
+import Aside from '../components/layout/aside';
+import Footer from '../components/layout/foot';
+import Header from '../components/layout/header';
+import Main from '../components/layout/main';
 import ButtonExample from './example/button.example';
 import IconExample from './example/icon.example';
+import Layout from '../components/layout/layout';
 
 const App: React.FunctionComponent = (): ReactElement => {
   return (
@@ -25,6 +30,14 @@ const App: React.FunctionComponent = (): ReactElement => {
           <main>
             <Route path="/icon" component={IconExample} />
             <Route path="/button" component={ButtonExample} />
+            <Layout>
+              <Header></Header>
+              <Layout>
+                <Aside></Aside>
+                <Main></Main>
+              </Layout>
+              <Footer></Footer>
+            </Layout>
           </main>
         </div>
       </div>

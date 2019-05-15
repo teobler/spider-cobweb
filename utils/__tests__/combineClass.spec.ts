@@ -22,7 +22,7 @@ describe('combineClass', () => {
   });
 
   it('should return prefixed string given a string and undefined', () => {
-    const result = combineClass('class-one', undefined);
+    const result = combineClass('class-one');
     expect(result).toEqual('spider-class-one');
   });
 });
