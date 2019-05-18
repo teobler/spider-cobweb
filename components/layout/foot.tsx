@@ -5,13 +5,13 @@ interface FooterProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 const Footer: React.FunctionComponent<FooterProps> = (props) => {
-  const { className = '', ...restProps } = props;
+  const { className = '', children, ...restProps } = props;
 
   return (
     <footer
       className={combineClass('layout-footer', className)}
       {...restProps}>
-      footer
+      {children}
     </footer>
   );
 };

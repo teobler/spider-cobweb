@@ -5,14 +5,14 @@ interface ContentProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 const Content: React.FunctionComponent<ContentProps> = (props) => {
-  const { className = '', ...restProps } = props;
+  const { className = '', children, ...restProps } = props;
 
   return (
-    <footer
+    <main
       className={combineClass('layout-content', className)}
       {...restProps}>
-      footer
-    </footer>
+      {children}
+    </main>
   );
 };
 

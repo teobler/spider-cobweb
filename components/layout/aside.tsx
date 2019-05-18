@@ -5,13 +5,13 @@ interface AsideProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 const Aside: React.FunctionComponent<AsideProps> = (props) => {
-  const { className = '', ...restProps } = props;
+  const { className = '', children, ...restProps } = props;
 
   return (
     <aside
       className={combineClass('layout-aside', className)}
       {...restProps}>
-      aside
+      {children}
     </aside>
   );
 };

@@ -1,0 +1,19 @@
+@import "../style/variables";
+
+.#{$prefix}-layout {
+  display: flex;
+  flex-direction: column;
+  &-content {
+    flex-grow: 1;
+  }
+  & & {
+    flex-grow: 1;
+    flex-direction: row;
+  }
+  &.#{$prefix}-layout-with-aside {
+    flex-direction: row;
+    & .#{$prefix}-layout {
+      flex-direction: column;
+    }
+  }
+}

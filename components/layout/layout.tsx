@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import combineClass from '../../utils/combineClass';
+import './layout.scss';
+import { CLASS_PREFIX } from '../constants';
+import Aside from './aside';
 
 interface LayoutProps extends React.HTMLAttributes<HTMLElement> {
 }
 
+const childrenHasAside = (children: ReactNode) => {
+  if (children instanceof Array) {
+    return children.some((node: ReactElement) => node.type === Aside)
+  } else {
+    return false;
+  }
+};
+
 const Layout: React.FunctionComponent<LayoutProps> = (props) => {
-  const { className = '', ...restProps } = props;
+  const { className = '', children, ...restProps } = props;
+  const asideClassName = childrenHasAside(children) ? `${CLASS_PREFIX}layout-with-aside` : '';
 
   return (
     <section
-      className={combineClass('layout', className)}
+      className={combineClass('layout', asideClassName, className)}
       {...restProps}>
-      {props.children}
+      {children}
     </section>
   );
 };
