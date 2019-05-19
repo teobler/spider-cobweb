@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import Icon from '../../components/icon/index';
 
-const IconExample: React.FunctionComponent = (): ReactElement => {
+const IconDemo: React.FunctionComponent = (): ReactElement => {
   return (
     <div>
       <Icon name="apple" />
@@ -10,4 +10,4 @@ const IconExample: React.FunctionComponent = (): ReactElement => {
   );
 };
 
-export default IconExample;
+export default IconDemo;

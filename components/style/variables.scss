@@ -3,16 +3,18 @@ $prefix: spider;
 // basic color
 $black: #000;
 $white: #fff;
+$grey: #e8e8e8;
 $primary: #1890ff;
 $deep-primary: #096dd9;
-$light-primary: #108ee9;
-$lighter-primary: #7dbcea;
+$light-primary1: #108ee9;
+$light-primary2: #3ba0e9;
+$light-primary3: #7dbcea;
 
 // element color
-$disabled-color: fade(#000, 25%);
+$disabled-color: rgba(#000, .25);
 $body-background: #fff;
-$text-color: fade($black, 65%);
-$heading-color: fade(#000, 85%);
+$text-color: rgba($black, .65);
+$heading-color: rgba(#000, .85);
 
 // font variables
 $font-size-base: 14px;

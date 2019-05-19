@@ -1,0 +1,32 @@
+@import "../../components/style/variables";
+
+.#{$prefix}-layout-demo {
+  width: 800px;
+  text-align: center;
+  color: $white;
+  .#{$prefix}-header-demo, .#{$prefix}-footer-demo {
+    padding: 0 50px;
+    line-height: 64px;
+    background: $light-primary3;
+  }
+  .#{$prefix}-content-demo {
+    height: 120px;
+    padding: 0 50px;
+    line-height: 120px;
+    background: $light-primary1;
+  }
+  .#{$prefix}-aside-demo {
+    width: 200px;
+    line-height: 120px;
+    background: $light-primary2;
+  }
+  .#{$prefix}-out-aside-demo {
+    padding: 0 50px;
+    line-height: 248px;
+    background: $light-primary2;
+  }
+}
+
+.#{$prefix}-layout-demo + .#{$prefix}-layout-demo {
+  margin-top: 48px;
+}

@@ -1,46 +1,45 @@
 import React, { ReactElement } from 'react';
 import { HashRouter as Router, Link, Route } from 'react-router-dom';
 import Aside from '../components/layout/aside';
-import Footer from '../components/layout/foot';
+import Content from '../components/layout/content';
 import Header from '../components/layout/header';
-import Main from '../components/layout/main';
-import ButtonExample from './example/button.example';
-import IconExample from './example/icon.example';
 import Layout from '../components/layout/layout';
+import './app.scss';
+import ButtonDemo from './example/button.demo';
+import IconDemo from './example/icon.demo';
+import LayoutDemo from './example/layout.demo';
 
 const App: React.FunctionComponent = (): ReactElement => {
   return (
     <Router>
-      <div>
-        <header>
-          <div>spider-cobweb</div>
-        </header>
-        <div>
-          <aside>
-            <h2>components</h2>
-            <ul>
-              <li>
-                <Link to="/icon">icon</Link>
-              </li>
-              <li>
-                <Link to="/button">button</Link>
+      <Layout>
+        <Header className="header">
+          <a href="#" className="logo-link">
+            <img src="../resources/logo.png" alt="logo" className="logo" />
+          </a>
+        </Header>
+        <Layout className="main">
+          <Aside className="aside">
+            <ul className="spider-menu">
+              <li className="spider-menu-item">
+                <div>
+                  <h4>Components</h4>
+                </div>
+                  <ul className="spider-submenu">
+                    <li><Link to="/icon">icon</Link></li>
+                    <li><Link to="/button">button</Link></li>
+                    <li><Link to="/layout">layout</Link></li>
+                  </ul>
               </li>
             </ul>
-          </aside>
-          <main>
-            <Route path="/icon" component={IconExample} />
-            <Route path="/button" component={ButtonExample} />
-            <Layout>
-              <Header></Header>
-              <Layout>
-                <Aside></Aside>
-                <Main></Main>
-              </Layout>
-              <Footer></Footer>
-            </Layout>
-          </main>
-        </div>
-      </div>
+          </Aside>
+          <Content className="content">
+            <Route path="/icon" component={IconDemo} />
+            <Route path="/button" component={ButtonDemo} />
+            <Route path="/layout" component={LayoutDemo} />
+          </Content>
+        </Layout>
+      </Layout>
     </Router>
   );
 };
