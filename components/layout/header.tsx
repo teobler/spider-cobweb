@@ -1,16 +1,11 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import combineClass from '../../utils/combineClass';
 
-interface HeaderProps extends React.HTMLAttributes<HTMLElement> {
-}
-
-const Header: React.FunctionComponent<HeaderProps> = (props) => {
+const Header: React.FunctionComponent<React.HTMLAttributes<HTMLElement>> = (props): ReactElement => {
   const { className = '', children, ...restProps } = props;
 
   return (
-    <header
-      className={combineClass('layout-header', className)}
-      {...restProps}>
+    <header className={combineClass('layout-header', className)} {...restProps}>
       {children}
     </header>
   );

@@ -13,10 +13,11 @@ describe('<Layout />', () => {
 
   it('detect the sider as children', () => {
     const wrapper = mount(
-    <Layout>
-      <Aside>Sider</Aside>
-      <Content>Content</Content>
-    </Layout>);
+      <Layout>
+        <Aside>Sider</Aside>
+        <Content>Content</Content>
+      </Layout>,
+    );
     expect(wrapper.find('.spider-layout').hasClass('spider-layout-with-aside')).toBe(true);
   });
 });

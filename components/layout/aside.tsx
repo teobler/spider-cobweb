@@ -1,16 +1,11 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import combineClass from '../../utils/combineClass';
 
-interface AsideProps extends React.HTMLAttributes<HTMLElement> {
-}
-
-const Aside: React.FunctionComponent<AsideProps> = (props) => {
+const Aside: React.FunctionComponent<React.HTMLAttributes<HTMLElement>> = (props): ReactElement => {
   const { className = '', children, ...restProps } = props;
 
   return (
-    <aside
-      className={combineClass('layout-aside', className)}
-      {...restProps}>
+    <aside className={combineClass('layout-aside', className)} {...restProps}>
       {children}
     </aside>
   );

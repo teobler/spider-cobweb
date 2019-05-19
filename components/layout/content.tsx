@@ -1,16 +1,11 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import combineClass from '../../utils/combineClass';
 
-interface ContentProps extends React.HTMLAttributes<HTMLElement> {
-}
-
-const Content: React.FunctionComponent<ContentProps> = (props) => {
+const Content: React.FunctionComponent<React.HTMLAttributes<HTMLElement>> = (props): ReactElement => {
   const { className = '', children, ...restProps } = props;
 
   return (
-    <main
-      className={combineClass('layout-content', className)}
-      {...restProps}>
+    <main className={combineClass('layout-content', className)} {...restProps}>
       {children}
     </main>
   );

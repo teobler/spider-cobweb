@@ -25,11 +25,17 @@ const App: React.FunctionComponent = (): ReactElement => {
                 <div>
                   <h4>Components</h4>
                 </div>
-                  <ul className="spider-submenu">
-                    <li><Link to="/icon">icon</Link></li>
-                    <li><Link to="/button">button</Link></li>
-                    <li><Link to="/layout">layout</Link></li>
-                  </ul>
+                <ul className="spider-submenu">
+                  <li>
+                    <Link to="/icon">icon</Link>
+                  </li>
+                  <li>
+                    <Link to="/button">button</Link>
+                  </li>
+                  <li>
+                    <Link to="/layout">layout</Link>
+                  </li>
+                </ul>
               </li>
             </ul>
           </Aside>
