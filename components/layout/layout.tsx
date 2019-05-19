@@ -1,8 +1,8 @@
 import React, { ReactElement, ReactNode } from 'react';
 import combineClass from '../../utils/combineClass';
-import './layout.scss';
 import { CLASS_PREFIX } from '../constants';
 import Aside from './aside';
+import './layout.scss';
 
 interface LayoutProps extends React.HTMLAttributes<HTMLElement> {
 }

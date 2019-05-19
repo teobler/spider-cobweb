@@ -6,14 +6,13 @@
   &-content {
     flex-grow: 1;
   }
-  & & {
-    flex-grow: 1;
-    flex-direction: row;
-  }
   &.#{$prefix}-layout-with-aside {
     flex-direction: row;
-    & .#{$prefix}-layout {
-      flex-direction: column;
-    }
+  }
+  .#{$prefix}-layout-header {
+    height: 64px;
+  }
+  .#{$prefix}-layout-aside {
+    width: 286px;
   }
 }
