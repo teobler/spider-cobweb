@@ -7,7 +7,7 @@
   .#{$prefix}-header-demo, .#{$prefix}-footer-demo {
     padding: 0 50px;
     line-height: 64px;
-    background: $light-primary3;
+    background: $light-primary4;
   }
   .#{$prefix}-content-demo {
     height: 120px;
@@ -18,12 +18,12 @@
   .#{$prefix}-aside-demo {
     width: 200px;
     line-height: 120px;
-    background: $light-primary2;
+    background: $light-primary3;
   }
   .#{$prefix}-out-aside-demo {
     padding: 0 50px;
     line-height: 248px;
-    background: $light-primary2;
+    background: $light-primary3;
   }
 }
 

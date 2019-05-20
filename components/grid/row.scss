@@ -1,0 +1,6 @@
+@import "../style/base";
+
+.#{$prefix}-row {
+  display: flex;
+  flex-flow: row wrap;
+}

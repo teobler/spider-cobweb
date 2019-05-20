@@ -6,6 +6,7 @@ import Header from '../components/layout/header';
 import Layout from '../components/layout/layout';
 import './app.scss';
 import ButtonDemo from './example/button.demo';
+import GridDemo from './example/grid.demo';
 import IconDemo from './example/icon.demo';
 import LayoutDemo from './example/layout.demo';
 
@@ -35,6 +36,9 @@ const App: React.FunctionComponent = (): ReactElement => {
                   <li>
                     <Link to="/layout">layout</Link>
                   </li>
+                  <li>
+                    <Link to="/grid">grid</Link>
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -43,6 +47,7 @@ const App: React.FunctionComponent = (): ReactElement => {
             <Route path="/icon" component={IconDemo} />
             <Route path="/button" component={ButtonDemo} />
             <Route path="/layout" component={LayoutDemo} />
+            <Route path="/grid" component={GridDemo} />
           </Content>
         </Layout>
       </Layout>
