@@ -1,22 +1,69 @@
 @import "../../components/style/base";
 
-.spider-row-demo-basic {
+.spider-grid-demo-basic {
+  margin-bottom: 60px;
   text-align: center;
-  color: white;
+  color: $white;
 
-  & + & {
+  .spider-row-demo + .spider-row-demo {
     margin-top: 16px;
   }
 
-  :nth-child(2n + 1) {
-    background: rgba($light-primary2, 0.7);
+  .spider-row-demo {
+    :nth-child(2n + 1) {
+      background: rgba($light-primary2, 0.7);
+    }
+
+    :nth-child(2n) {
+      background: $light-primary2;
+    }
+
+    .spider-col-demo {
+      padding: 16px 0;
+    }
+  }
+}
+
+.spider-grid-demo-gutter {
+  margin-bottom: 60px;
+  text-align: center;
+  color: $white;
+
+  .spider-col-demo {
+    .gutter-box {
+      padding: 16px 0;
+      background-color: $light-primary2;
+    }
+  }
+}
+
+.spider-grid-demo-offset {
+  margin-bottom: 60px;
+  text-align: center;
+  color: $white;
+
+  .spider-row-demo + .spider-row-demo {
+    margin-top: 16px;
   }
 
-  :nth-child(2n) {
-    background: $light-primary2;
+  .spider-row-demo {
+    :nth-child(2n + 1) {
+      background: rgba($light-primary2, 0.7);
+    }
+
+    :nth-child(2n) {
+      background: $light-primary2;
+    }
   }
 
   .spider-col-demo {
     padding: 16px 0;
+    background-color: $light-primary2;
   }
+}
+
+.spider-row::before, .spider-row::after {
+  display: table;
+  content: '';
+  box-sizing: border-box;
 }
