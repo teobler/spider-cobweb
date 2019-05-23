@@ -62,8 +62,27 @@
   }
 }
 
-.spider-row::before, .spider-row::after {
-  display: table;
-  content: '';
-  box-sizing: border-box;
+.spider-grid-demo-adaptive {
+  margin-bottom: 60px;
+  text-align: center;
+  color: $white;
+
+  .spider-row-demo + .spider-row-demo {
+    margin-top: 16px;
+  }
+
+  .spider-row-demo {
+    :nth-child(2n + 1) {
+      background: rgba($light-primary2, 0.7);
+    }
+
+    :nth-child(2n) {
+      background: $light-primary2;
+    }
+  }
+
+  .spider-col-demo {
+    padding: 16px 0;
+    background-color: $light-primary2;
+  }
 }

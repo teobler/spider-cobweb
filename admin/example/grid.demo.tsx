@@ -82,6 +82,27 @@ const GridDemo: React.FunctionComponent = (): ReactElement => {
           </Col>
         </Row>
       </div>
+
+      <div className="spider-grid-demo-adaptive">
+        <Row className="spider-row-demo">
+          <Col span={1} xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 10 }} lg={{ span: 8 }} xl={{ span: 6 }}
+               className="spider-col-demo">
+            col-6
+          </Col>
+          <Col span={1} xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 10 }} lg={{ span: 8 }} xl={{ span: 6 }}
+               className="spider-col-demo">
+            col-6
+          </Col>
+          <Col span={1} xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 10 }} lg={{ span: 8 }} xl={{ span: 6 }}
+               className="spider-col-demo">
+            col-6
+          </Col>
+          <Col span={1} xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 10 }} lg={{ span: 8 }} xl={{ span: 6 }}
+               className="spider-col-demo">
+            col-6
+          </Col>
+        </Row>
+      </div>
     </div>
   );
 };

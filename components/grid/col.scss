@@ -2,7 +2,6 @@
 
 @for $n from 1 through 24 {
   &.#{$prefix}-col-#{$n} {
-    flex: 0 0 auto;
     width: ($n / 24) * 100%;
   }
 }
@@ -10,5 +9,79 @@
 @for $n from 1 through 24 {
   &.#{$prefix}-col-offset-#{$n} {
     margin-left: ($n / 24) * 100%;
+  }
+}
+
+.#{$prefix}-col-0, .#{$prefix}-col-offset-0 {
+  display: none;
+}
+
+@media (min-width:0px) {
+  @for $n from 1 through 24 {
+    &.#{$prefix}-xs-col-#{$n} {
+      width: ($n / 24) * 100%;
+    }
+  }
+
+  @for $n from 1 through 24 {
+    &.#{$prefix}-xs-col-offset-#{$n} {
+      width: ($n / 24) * 100%;
+    }
+  }
+}
+
+@media (min-width:576px) {
+  @for $n from 1 through 24 {
+    &.#{$prefix}-sm-col-#{$n} {
+      width: ($n / 24) * 100%;
+    }
+  }
+
+  @for $n from 1 through 24 {
+    &.#{$prefix}-sm-col-offset-#{$n} {
+      width: ($n / 24) * 100%;
+    }
+  }
+}
+
+@media (min-width:768px) {
+  @for $n from 1 through 24 {
+    &.#{$prefix}-md-col-#{$n} {
+      width: ($n / 24) * 100%;
+    }
+  }
+
+  @for $n from 1 through 24 {
+    &.#{$prefix}-md-col-offset-#{$n} {
+      width: ($n / 24) * 100%;
+    }
+  }
+}
+
+@media (min-width:992px) {
+  @for $n from 1 through 24 {
+    &.#{$prefix}-lg-col-#{$n} {
+      width: ($n / 24) * 100%;
+    }
+  }
+
+  @for $n from 1 through 24 {
+    &.#{$prefix}-lg-col-offset-#{$n} {
+      width: ($n / 24) * 100%;
+    }
+  }
+}
+
+@media (min-width:1200px) {
+  @for $n from 1 through 24 {
+    &.#{$prefix}-xl-col-#{$n} {
+      width: ($n / 24) * 100%;
+    }
+  }
+
+  @for $n from 1 through 24 {
+    &.#{$prefix}-xl-col-offset-#{$n} {
+      width: ($n / 24) * 100%;
+    }
   }
 }
