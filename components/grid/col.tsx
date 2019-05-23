@@ -1,7 +1,7 @@
 import React, { ReactElement, ReactNode } from 'react';
 import combineClass from '../../utils/combineClass';
-import './col.scss';
 import { CLASS_PREFIX } from '../constants';
+import './col.scss';
 
 interface Adaptive {
   span: number;
@@ -19,19 +19,23 @@ export interface ColProps extends React.HTMLAttributes<HTMLDivElement> {
   xl?: Adaptive;
 }
 
-const renderChildren = (gutter: number, children: ReactNode) => {
-  return gutter ? React.Children.map(children, (child: ReactElement<ColProps>) => {
-    return <div className="gutter-box">{child}</div>;
-  }) : children;
+const renderChildren = (gutter: number, children: ReactNode): ReactNode => {
+  return gutter
+    ? React.Children.map(children, (child: ReactElement<ColProps>) => {
+        return <div className="gutter-box">{child}</div>;
+      })
+    : children;
 };
 
 const getAdaptiveClassName = (restProps: any): string[] => {
   const classNames: string[] = [];
   ['xs', 'sm', 'md', 'lg', 'xl'].forEach(size => {
-    let adaptiveProp: Adaptive = restProps[size] || {};
-    classNames.push(`spider-${size}-col-${adaptiveProp.span}`);
-    if (adaptiveProp.offset) {
-      classNames.push(`spider-${size}-col-offset-${adaptiveProp.offset}`);
+    let adaptiveProp: Adaptive = restProps[size] || null;
+    if (adaptiveProp) {
+      classNames.push(`spider-${size}-col-${adaptiveProp.span}`);
+      if (adaptiveProp.offset) {
+        classNames.push(`spider-${size}-col-offset-${adaptiveProp.offset}`);
+      }
     }
   });
 
@@ -45,7 +49,11 @@ const Col: React.FunctionComponent<ColProps> = (props): ReactElement => {
   const adaptiveClassName = getAdaptiveClassName(restProps).join(' ');
 
   return (
-    <div className={combineClass(`col-${span}`, offsetClassName, adaptiveClassName, className)} style={styleWithGutter} {...restProps}>
+    <div
+      className={combineClass(`col-${span}`, offsetClassName, adaptiveClassName, className)}
+      style={styleWithGutter}
+      {...restProps}
+    >
       {renderChildren(gutter, children)}
     </div>
   );

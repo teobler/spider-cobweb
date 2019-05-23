@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Col /> should render a col with offset in row 1`] = `
+<div
+  className="spider-row"
+  style={Object {}}
+>
+  <div
+    className="spider-col-12 spider-col-offset-12"
+    style={Object {}}
+  />
+</div>
+`;
+
 exports[`<Col /> should render a full col in row 1`] = `
 <div
   className="spider-row"
@@ -7,6 +19,127 @@ exports[`<Col /> should render a full col in row 1`] = `
 >
   <div
     className="spider-col-24"
+    style={Object {}}
   />
+</div>
+`;
+
+exports[`<Col /> should render two adaptive col with offset 1`] = `
+<div
+  className="spider-row"
+  style={Object {}}
+>
+  <div
+    className="spider-col-1 spider-xs-col-24 spider-xs-col-offset-1 spider-sm-col-12 spider-sm-col-offset-2 spider-md-col-10 spider-md-col-offset-3 spider-lg-col-8 spider-lg-col-offset-4 spider-xl-col-6 spider-xl-col-offset-5 spider-col-demo"
+    lg={
+      Object {
+        "offset": 4,
+        "span": 8,
+      }
+    }
+    md={
+      Object {
+        "offset": 3,
+        "span": 10,
+      }
+    }
+    sm={
+      Object {
+        "offset": 2,
+        "span": 12,
+      }
+    }
+    style={Object {}}
+    xl={
+      Object {
+        "offset": 5,
+        "span": 6,
+      }
+    }
+    xs={
+      Object {
+        "offset": 1,
+        "span": 24,
+      }
+    }
+  >
+    col-test
+  </div>
+  <div
+    className="spider-col-1 spider-xs-col-24 spider-xs-col-offset-1 spider-sm-col-12 spider-sm-col-offset-2 spider-md-col-10 spider-md-col-offset-3 spider-lg-col-8 spider-lg-col-offset-4 spider-xl-col-6 spider-xl-col-offset-5 spider-col-demo"
+    lg={
+      Object {
+        "offset": 4,
+        "span": 8,
+      }
+    }
+    md={
+      Object {
+        "offset": 3,
+        "span": 10,
+      }
+    }
+    sm={
+      Object {
+        "offset": 2,
+        "span": 12,
+      }
+    }
+    style={Object {}}
+    xl={
+      Object {
+        "offset": 5,
+        "span": 6,
+      }
+    }
+    xs={
+      Object {
+        "offset": 1,
+        "span": 24,
+      }
+    }
+  >
+    col-test
+  </div>
+</div>
+`;
+
+exports[`<Col /> should render two col with gutter box 1`] = `
+<div
+  className="spider-row"
+  style={
+    Object {
+      "margin": "0 -8px",
+    }
+  }
+>
+  <div
+    className="spider-col-12"
+    style={
+      Object {
+        "padding": "0 8px",
+      }
+    }
+  >
+    <div
+      className="gutter-box"
+    >
+      test
+    </div>
+  </div>
+  <div
+    className="spider-col-12"
+    style={
+      Object {
+        "padding": "0 8px",
+      }
+    }
+  >
+    <div
+      className="gutter-box"
+    >
+      test
+    </div>
+  </div>
 </div>
 `;

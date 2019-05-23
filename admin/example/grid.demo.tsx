@@ -85,21 +85,49 @@ const GridDemo: React.FunctionComponent = (): ReactElement => {
 
       <div className="spider-grid-demo-adaptive">
         <Row className="spider-row-demo">
-          <Col span={1} xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 10 }} lg={{ span: 8 }} xl={{ span: 6 }}
-               className="spider-col-demo">
-            col-6
+          <Col
+            span={1}
+            xs={{ span: 24 }}
+            sm={{ span: 12 }}
+            md={{ span: 10 }}
+            lg={{ span: 8 }}
+            xl={{ span: 6 }}
+            className="spider-col-demo"
+          >
+            col-adaptive
           </Col>
-          <Col span={1} xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 10 }} lg={{ span: 8 }} xl={{ span: 6 }}
-               className="spider-col-demo">
-            col-6
+          <Col
+            span={1}
+            xs={{ span: 24 }}
+            sm={{ span: 12 }}
+            md={{ span: 10 }}
+            lg={{ span: 8 }}
+            xl={{ span: 6 }}
+            className="spider-col-demo"
+          >
+            col-adaptive
           </Col>
-          <Col span={1} xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 10 }} lg={{ span: 8 }} xl={{ span: 6 }}
-               className="spider-col-demo">
-            col-6
+          <Col
+            span={1}
+            xs={{ span: 24 }}
+            sm={{ span: 12 }}
+            md={{ span: 10 }}
+            lg={{ span: 8 }}
+            xl={{ span: 6 }}
+            className="spider-col-demo"
+          >
+            col-adaptive
           </Col>
-          <Col span={1} xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 10 }} lg={{ span: 8 }} xl={{ span: 6 }}
-               className="spider-col-demo">
-            col-6
+          <Col
+            span={1}
+            xs={{ span: 24 }}
+            sm={{ span: 12 }}
+            md={{ span: 10 }}
+            lg={{ span: 8 }}
+            xl={{ span: 6 }}
+            className="spider-col-demo"
+          >
+            col-adaptive
           </Col>
         </Row>
       </div>
