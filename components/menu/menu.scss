@@ -1,0 +1,23 @@
+@import "../style/variables";
+
+.#{$prefix}-menu {
+  display: flex;
+
+  .#{$prefix}-menu-item {
+    line-height: 46px;
+    padding: 0 20px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s $ease-in-out, border-color 0.3s $ease-in-out;
+
+    &:hover {
+      color: $primary;
+      border-bottom: 2px solid $primary;
+    }
+  }
+
+  .#{$prefix}-menu-item-selected {
+    color: $primary;
+    border-bottom: 2px solid $primary;
+  }
+}

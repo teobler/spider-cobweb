@@ -9,6 +9,7 @@ import ButtonDemo from './example/button.demo';
 import GridDemo from './example/grid.demo';
 import IconDemo from './example/icon.demo';
 import LayoutDemo from './example/layout.demo';
+import MenuDemo from './example/menu.demo';
 
 const App: React.FunctionComponent = (): ReactElement => {
   return (
@@ -39,6 +40,9 @@ const App: React.FunctionComponent = (): ReactElement => {
                   <li>
                     <Link to="/grid">grid</Link>
                   </li>
+                  <li>
+                    <Link to="/menu">menu</Link>
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -48,6 +52,7 @@ const App: React.FunctionComponent = (): ReactElement => {
             <Route path="/button" component={ButtonDemo} />
             <Route path="/layout" component={LayoutDemo} />
             <Route path="/grid" component={GridDemo} />
+            <Route path="/menu" component={MenuDemo} />
           </Content>
         </Layout>
       </Layout>
