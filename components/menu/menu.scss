@@ -2,17 +2,31 @@
 
 .#{$prefix}-menu {
   display: flex;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid $grey;
 
   .#{$prefix}-menu-item {
     line-height: 46px;
     padding: 0 20px;
+    margin-bottom: -1px;
     cursor: pointer;
     border-bottom: 2px solid transparent;
-    transition: color 0.3s $ease-in-out, border-color 0.3s $ease-in-out;
+    transition: color .3s $ease-in-out, border-color .3s $ease-in-out;
 
     &:hover {
       color: $primary;
       border-bottom: 2px solid $primary;
+    }
+  }
+
+  .#{$prefix}-menu-item-disabled {
+    color: rgba($black, .25);
+    cursor: not-allowed;
+
+    &:hover {
+      color: rgba($black, .25);
+      border-bottom: 2px solid transparent;
     }
   }
 
