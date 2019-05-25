@@ -1,4 +1,4 @@
-@import "../style/base";
+@import "../style/variables";
 
 @for $n from 1 through 24 {
   &.#{$prefix}-col-#{$n} {
