@@ -9,9 +9,14 @@ interface MenuProps extends React.HTMLAttributes<HTMLUListElement> {
   selectedKey?: KeyType;
 }
 
-const getUniqueKeyFromChild = (child: React.ReactElement, index: number) => child.key || `menu-item-${index}`;
+const getUniqueKeyFromChild = (child: React.ReactElement, index: number): string | number =>
+  child.key || `menu-item-${index}`;
 
-const renderChildren = (children: ReactNode, selectedKey: KeyType | undefined, setSelectedKey: Dispatch<SetStateAction<KeyType>>) => {
+const renderChildren = (
+  children: ReactNode,
+  selectedKey: KeyType | undefined,
+  setSelectedKey: Dispatch<SetStateAction<KeyType>>,
+) => {
   return React.Children.map(children, (child: React.ReactElement, index: number) => {
     const uniqueKey = getUniqueKeyFromChild(child, index);
     return React.cloneElement(child, { uniqueKey, selectedKey, setSelectedKey });

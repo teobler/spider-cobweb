@@ -17,7 +17,7 @@ const MenuItem: React.FunctionComponent<MenuItemProps> = (props): ReactElement =
   const disabledClassName = disable ? `${CLASS_PREFIX}${basicClassName}-disabled` : '';
   const selectedClassName = uniqueKey === selectedKey ? `${CLASS_PREFIX}${basicClassName}-selected` : '';
 
-  const handleClick = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+  const handleClick = (event: React.MouseEvent<HTMLElement, MouseEvent>): void => {
     if (onClick) {
       onClick(event);
     }
@@ -28,8 +28,11 @@ const MenuItem: React.FunctionComponent<MenuItemProps> = (props): ReactElement =
   };
 
   return (
-    <li className={combineClass(basicClassName, selectedClassName, disabledClassName, className)}
-        onClick={(event) => handleClick(event)} {...restProps}>
+    <li
+      className={combineClass(basicClassName, selectedClassName, disabledClassName, className)}
+      onClick={event => handleClick(event)}
+      {...restProps}
+    >
       {children}
     </li>
   );

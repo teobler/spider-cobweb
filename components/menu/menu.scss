@@ -32,6 +32,16 @@
       color: rgba($black, .25);
       border-bottom: 2px solid transparent;
     }
+
+    .#{$prefix}-submenu-title-disabled {
+      color: rgba($black, .25);
+      cursor: not-allowed;
+
+      &:hover {
+        color: rgba($black, .25);
+        border-bottom: 0 solid transparent;
+      }
+    }
   }
 
   .#{$prefix}-menu-item-selected {

@@ -10,18 +10,21 @@ interface SubList extends React.HTMLAttributes<HTMLElement> {
 const ListItem: React.FunctionComponent<SubList> = (props): ReactElement => {
   const { setSelectedKey, uniqueKey, onClick, children } = props;
 
-  const handleClick = (event: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+  const handleClick = (event: React.MouseEvent<HTMLLIElement, MouseEvent>): void => {
     if (onClick) {
       onClick(event);
     }
 
-    setSelectedKey!(uniqueKey!);
+    if (setSelectedKey && uniqueKey) {
+      setSelectedKey(uniqueKey);
+    }
   };
 
-  return (<li className={combineClass('submenu-item')}
-              onClick={(event) => handleClick(event)}>
-          {children}
-          </li>);
+  return (
+    <li className={combineClass('submenu-item')} onClick={event => handleClick(event)}>
+      {children}
+    </li>
+  );
 };
 
 export default ListItem;

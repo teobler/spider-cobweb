@@ -7,7 +7,11 @@ interface SubList extends React.HTMLAttributes<HTMLElement> {
   uniqueKey?: KeyType;
 }
 
-const renderChildren = (children: ReactNode, uniqueKey: KeyType | undefined, setSelectedKey: Dispatch<SetStateAction<KeyType>>) => {
+const renderChildren = (
+  children: ReactNode,
+  uniqueKey: KeyType | undefined,
+  setSelectedKey: Dispatch<SetStateAction<KeyType>> | undefined,
+) => {
   return React.Children.map(children, (child: React.ReactElement) => {
     return React.cloneElement(child, { uniqueKey, setSelectedKey });
   });
@@ -16,14 +20,12 @@ const renderChildren = (children: ReactNode, uniqueKey: KeyType | undefined, set
 const SubList: React.FunctionComponent<SubList> = (props): ReactElement => {
   const { title, setSelectedKey, uniqueKey, children } = props;
 
-  return (<React.Fragment>
-    <div className={combineClass('submenu-title')}>
-      {title}
-    </div>
-    <ul className={combineClass('submenu-list')}>
-      {renderChildren(children, uniqueKey, setSelectedKey!)}
-    </ul>
-  </React.Fragment>);
+  return (
+    <React.Fragment>
+      <div className={combineClass('submenu-title')}>{title}</div>
+      <ul className={combineClass('submenu-list')}>{renderChildren(children, uniqueKey, setSelectedKey)}</ul>
+    </React.Fragment>
+  );
 };
 
 export default SubList;
