@@ -1,9 +1,9 @@
 import React, { Dispatch, ReactElement, SetStateAction } from 'react';
 import combineClass from '../../utils/combineClass';
 import { CLASS_PREFIX } from '../constants';
-import {KeyType} from './menu';
+import { KeyType } from './menu';
 
-interface MenuItemProps extends React.HTMLAttributes<HTMLElement>{
+interface MenuItemProps extends React.HTMLAttributes<HTMLElement> {
   key: KeyType;
   uniqueKey?: KeyType;
   selectedKey?: KeyType;
@@ -28,7 +28,8 @@ const MenuItem: React.FunctionComponent<MenuItemProps> = (props): ReactElement =
   };
 
   return (
-    <li className={combineClass(basicClassName, selectedClassName, disabledClassName, className)} onClick={(event) => handleClick(event)} {...restProps}>
+    <li className={combineClass(basicClassName, selectedClassName, disabledClassName, className)}
+        onClick={(event) => handleClick(event)} {...restProps}>
       {children}
     </li>
   );
