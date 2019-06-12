@@ -1,6 +1,131 @@
 @import "../style/variables";
 
-.#{$prefix}-menu {
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+.#{$prefix}-menu-vertical {
+  width: 256px;
+  padding: 0;
+  margin: 0;
+  border-right: 1px solid $grey;
+
+  .#{$prefix}-menu-item, .#{$prefix}-menu-submenu-title {
+    height: 40px;
+    margin: 4px -1px 0 4px;
+    padding: 0 34px 0 40px;
+    line-height: 40px;
+    cursor: pointer;
+    border-right: 3px solid transparent;
+    background-color: transparent;
+    transition: all .3s $ease-in-out;
+
+    &:hover {
+      color: $primary;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .#{$prefix}-menu-submenu-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgba($black, .85);
+    padding-right: 20px;
+
+    svg {
+      transition: transform .3s;
+    }
+
+    .#{$prefix}-rotation {
+      transform: rotate(180deg);
+    }
+  }
+
+  .#{$prefix}-menu-item-selected {
+    margin-right: -1px;
+    color: $primary;
+    background-color: $light-primary5;
+    border-right: 3px solid $primary;
+  }
+
+  .#{$prefix}-menu-item-disabled {
+    color: rgba($black, .25);
+    cursor: not-allowed;
+
+    &:hover {
+      color: rgba($black, .25);
+    }
+
+    .#{$prefix}-submenu-title-disabled {
+      color: rgba($black, .25);
+      cursor: not-allowed;
+
+      &:hover {
+        color: rgba($black, .25);
+        border-bottom: 0 solid transparent;
+      }
+    }
+  }
+
+  .#{$prefix}-menu-submenu {
+    .#{$prefix}-submenu-list {
+      min-width: initial;
+      padding: 0 20px;
+      border-radius: 4px;
+    }
+
+    .#{$prefix}-menu-submenu-container {
+      height: 0;
+      min-width: inherit;
+      overflow: hidden;
+      box-sizing: content-box;
+      background: $white;
+      border-radius: 4px;
+      transition: height .3s $ease-in-out 0s,
+      padding-top .3s $ease-in-out 0s,
+      padding-bottom .3s $ease-in-out 0s,
+      opacity .3s $ease-in-out 0s;
+
+      .#{$prefix}-submenu-title {
+        color: rgba($black, .45);
+        height: 40px;
+        line-height: 40px;
+        cursor: default;
+        padding-left: 56px;
+      }
+
+      .#{$prefix}-submenu-list {
+        padding: 0;
+
+        .#{$prefix}-submenu-item {
+          padding: 0 0 0 80px;
+          height: 40px;
+          line-height: 40px;
+          cursor: pointer;
+
+          &:hover {
+            color: $primary;
+          }
+        }
+
+        .#{$prefix}-submenu-item + .#{$prefix}-submenu-item {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}
+
+.#{$prefix}-menu-horizontal {
   display: flex;
   margin: 0;
   padding: 0;
@@ -69,7 +194,7 @@
       box-shadow: 0 4px 8px rgba($black, .15);
       transition: height .3s $ease-in-out 0s,
       padding-top .3s $ease-in-out 0s,
-      padding-top .3s $ease-in-out 0s,
+      padding-bottom .3s $ease-in-out 0s,
       opacity .3s $ease-in-out 0s;
 
       .#{$prefix}-submenu-title {
