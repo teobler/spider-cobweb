@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 const CCC: React.FunctionComponent = () => {
-
   const [count, setCount] = useState(0);
   const [name] = useState('Star');
 
@@ -13,8 +12,10 @@ const CCC: React.FunctionComponent = () => {
   };
 
   return (
-    <div className='App'>
-      <p>{name} Has Clicked <strong>{count}</strong> Times</p>
+    <div className="App">
+      <p>
+        {name} Has Clicked <strong>{count}</strong> Times
+      </p>
       <button onClick={countPlusThree}>Click *3</button>
     </div>
   );

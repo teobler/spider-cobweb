@@ -12,7 +12,8 @@ interface SubList extends React.HTMLAttributes<HTMLElement> {
 
 const ListItem: React.FunctionComponent<SubList> = (props): ReactElement => {
   const { setSelectedKey, selectedKey, uniqueKey, mode, onClick, children } = props;
-  const selectedClassName = mode === 'horizontal' ? '' : uniqueKey === selectedKey ? `${CLASS_PREFIX}menu-item-selected` : '';
+  const selectedClassName =
+    mode === 'horizontal' ? '' : uniqueKey === selectedKey ? `${CLASS_PREFIX}menu-item-selected` : '';
 
   const handleClick = (event: React.MouseEvent<HTMLLIElement, MouseEvent>): void => {
     if (onClick) {

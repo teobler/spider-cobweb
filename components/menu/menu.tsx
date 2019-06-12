@@ -17,7 +17,7 @@ const renderChildren = (
   children: ReactNode,
   selectedKey: KeyType | undefined,
   setSelectedKey: Dispatch<SetStateAction<KeyType>>,
-  mode: string | undefined
+  mode: string | undefined,
 ) => {
   return React.Children.map(children, (child: React.ReactElement, index: number) => {
     const uniqueKey = getUniqueKeyFromChild(child, index);

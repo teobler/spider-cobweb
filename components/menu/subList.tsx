@@ -9,15 +9,18 @@ interface SubList extends React.HTMLAttributes<HTMLElement> {
   mode?: string;
 }
 
-const getUniqueKeyFromChild = (child: React.ReactElement, index: number, uniqueKey: KeyType | undefined): string | number =>
-  child.key || `${uniqueKey}-item-${index}`;
+const getUniqueKeyFromChild = (
+  child: React.ReactElement,
+  index: number,
+  uniqueKey: KeyType | undefined,
+): string | number => child.key || `${uniqueKey}-item-${index}`;
 
 const renderChildren = (
   children: ReactNode,
   selectedKey: KeyType | undefined,
   uniqueKey: KeyType | undefined,
   setSelectedKey: Dispatch<SetStateAction<KeyType>> | undefined,
-  mode: string
+  mode: string,
 ) => {
   return React.Children.map(children, (child: React.ReactElement, index: number) => {
     const childUniqueKey = mode === 'vertical' ? getUniqueKeyFromChild(child, index, uniqueKey) : uniqueKey;
@@ -31,11 +34,10 @@ const SubList: React.FunctionComponent<SubList> = (props): ReactElement => {
 
   return (
     <React.Fragment>
-      <div className={combineClass('submenu-title')}>
-        {title}
-      </div>
-      <ul
-        className={combineClass('submenu-list')}>{renderChildren(children, selectedKey, uniqueKey, setSelectedKey, mode)}</ul>
+      <div className={combineClass('submenu-title')}>{title}</div>
+      <ul className={combineClass('submenu-list')}>
+        {renderChildren(children, selectedKey, uniqueKey, setSelectedKey, mode)}
+      </ul>
     </React.Fragment>
   );
 };

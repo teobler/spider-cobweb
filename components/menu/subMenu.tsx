@@ -35,8 +35,7 @@ const handleClick = (
   setShowPopup(!showPopup);
 };
 
-const handleBlur = (setShowPopup: React.Dispatch<React.SetStateAction<boolean>>,
-                    mode: string | undefined) => {
+const handleBlur = (setShowPopup: React.Dispatch<React.SetStateAction<boolean>>, mode: string | undefined) => {
   if (mode && mode === 'horizontal') {
     setShowPopup(false);
   }
@@ -66,7 +65,7 @@ const SubMenu: React.FunctionComponent<SubMenu> = (props): ReactElement => {
       divRef.current.style.paddingBottom = '0';
       divRef.current.style.opacity = '0';
     }
-  }, [showPopup]);
+  }, [mode, showPopup]);
 
   const renderChildren = () => {
     return React.Children.map(children, (child: React.ReactElement, index: number) => {
@@ -89,10 +88,7 @@ const SubMenu: React.FunctionComponent<SubMenu> = (props): ReactElement => {
         onBlur={() => handleBlur(setShowPopup, mode)}
       >
         {title}
-        {
-          mode === 'vertical' ?
-            <Icon className={combineClass(rotationClassName)} name="up" /> : null
-        }
+        {mode === 'vertical' ? <Icon className={combineClass(rotationClassName)} name="up" /> : null}
       </div>
       <div ref={divRef} className={combineClass('menu-submenu-container')}>
         {renderChildren()}
