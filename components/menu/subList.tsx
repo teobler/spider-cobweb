@@ -34,7 +34,10 @@ const SubList: React.FunctionComponent<SubList> = (props): ReactElement => {
 
   return (
     <React.Fragment>
-      <div className={combineClass('submenu-title')}>{title}</div>
+      {title ?
+        <div className={combineClass('submenu-title')}>{title}</div>
+        : null
+      }
       <ul className={combineClass('submenu-list')}>
         {renderChildren(children, selectedKey, uniqueKey, setSelectedKey, mode)}
       </ul>

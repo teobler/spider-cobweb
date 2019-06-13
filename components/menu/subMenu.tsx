@@ -19,6 +19,7 @@ interface SubMenu extends React.HTMLAttributes<HTMLElement> {
   disable?: boolean;
   setSelectedKey?: Dispatch<SetStateAction<KeyType>>;
   mode?: string;
+  openPopup?: boolean;
 }
 
 const handleClick = (
@@ -45,8 +46,9 @@ const getUniqueKeyFromChild = (child: React.ReactElement, index: number): string
   child.key || `submenu-list-${index}`;
 
 const SubMenu: React.FunctionComponent<SubMenu> = (props): ReactElement => {
-  const { className = '', onClick, title, setSelectedKey, uniqueKey, selectedKey, disable, mode, children } = props;
-  const [showPopup, setShowPopup] = useState(false);
+  const { className = '', onClick, title, setSelectedKey, uniqueKey, selectedKey, disable, mode, openPopup = false, children } = props;
+  const initPopStatus = mode === 'horizontal' ? openPopup : false;
+  const [showPopup, setShowPopup] = useState(initPopStatus);
   const divRef = useRef<HTMLDivElement>(null);
   const disabledClassName = disable ? `${CLASS_PREFIX}menu-item-disabled` : '';
   const disabledTitleClassName = disable ? `${CLASS_PREFIX}submenu-title-disabled` : '';
@@ -60,12 +62,13 @@ const SubMenu: React.FunctionComponent<SubMenu> = (props): ReactElement => {
       divRef.current.style.padding = mode === 'horizontal' ? '10px' : '0';
       divRef.current.style.opacity = '1';
     } else if (!showPopup && divRef.current) {
+      divRef.current.style.overflow = 'hidden';
       divRef.current.style.height = '0';
       divRef.current.style.paddingTop = '0';
       divRef.current.style.paddingBottom = '0';
       divRef.current.style.opacity = '0';
     }
-  }, [mode, showPopup]);
+  }, [showPopup]);
 
   const renderChildren = () => {
     return React.Children.map(children, (child: React.ReactElement, index: number) => {

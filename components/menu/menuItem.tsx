@@ -16,7 +16,6 @@ const MenuItem: React.FunctionComponent<MenuItemProps> = (props): ReactElement =
   const basicClassName = 'menu-item';
   const disabledClassName = disable ? `${CLASS_PREFIX}${basicClassName}-disabled` : '';
   const selectedClassName = uniqueKey === selectedKey ? `${CLASS_PREFIX}${basicClassName}-selected` : '';
-  // TODO: add mode
 
   const handleClick = (event: React.MouseEvent<HTMLElement, MouseEvent>): void => {
     if (onClick) {
