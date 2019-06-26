@@ -41,8 +41,6 @@ const handleBlur = (setShowPopup: React.Dispatch<React.SetStateAction<boolean>>,
   }
 };
 
-const getUniqueKeyFromChild = (child: React.ReactElement, index: number, uniqueKey: string): string => `${uniqueKey}-list-${index}`;
-
 const SubMenu: React.FunctionComponent<SubMenu> = (props): ReactElement => {
   const { className = '', onClick, title, setSelectedKey, selectedKey, disable, mode, openPopup = false, uniqueKey, children } = props;
   const initPopStatus = mode === 'vertical' ? openPopup : false;
@@ -69,7 +67,7 @@ const SubMenu: React.FunctionComponent<SubMenu> = (props): ReactElement => {
   }, [showPopup]);
 
   const renderChildren = () => {
-    return React.Children.map(children, (child: React.ReactElement, index: number) => {
+    return React.Children.map(children, (child: React.ReactElement) => {
       return React.cloneElement(child, { childUniqueKey: uniqueKey, mode, setSelectedKey, selectedKey });
     });
   };
