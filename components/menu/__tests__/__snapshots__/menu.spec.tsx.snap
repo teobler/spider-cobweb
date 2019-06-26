@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Menu /> should render a empty menu 1`] = `
+<ul
+  className="spider-menu-vertical"
+/>
+`;
+
+exports[`<Menu /> should render a empty menu with horizontal mode 1`] = `
+<ul
+  className="spider-menu-horizontal"
+/>
+`;
