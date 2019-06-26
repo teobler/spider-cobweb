@@ -2,26 +2,19 @@ import React, { Dispatch, ReactElement, ReactNode, SetStateAction, useState } fr
 import combineClass from '../../utils/combineClass';
 import './menu.scss';
 
-export type KeyType = string | number;
-
 interface MenuProps extends React.HTMLAttributes<HTMLUListElement> {
-  defaultSelectedKey?: KeyType;
-  selectedKey?: KeyType;
+  defaultSelectedKey?: string;
   mode?: string;
 }
 
-const getUniqueKeyFromChild = (child: React.ReactElement, index: number): string | number =>
-  child.key || `menu-item-${index}`;
-
 const renderChildren = (
   children: ReactNode,
-  selectedKey: KeyType | undefined,
-  setSelectedKey: Dispatch<SetStateAction<KeyType>>,
+  selectedKey: string | undefined,
+  setSelectedKey: Dispatch<SetStateAction<string>>,
   mode: string | undefined,
 ) => {
-  return React.Children.map(children, (child: React.ReactElement, index: number) => {
-    const uniqueKey = getUniqueKeyFromChild(child, index);
-    return React.cloneElement(child, { uniqueKey, selectedKey, setSelectedKey, mode });
+  return React.Children.map(children, (child: React.ReactElement) => {
+    return React.cloneElement(child, { selectedKey, setSelectedKey, mode });
   });
 };
 

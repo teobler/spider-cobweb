@@ -1,14 +1,12 @@
 import React, { Dispatch, ReactElement, SetStateAction } from 'react';
 import combineClass from '../../utils/combineClass';
 import { CLASS_PREFIX } from '../constants';
-import { KeyType } from './menu';
 
 interface MenuItemProps extends React.HTMLAttributes<HTMLElement> {
-  key: KeyType;
-  uniqueKey?: KeyType;
-  selectedKey?: KeyType;
+  uniqueKey: string;
+  selectedKey?: string;
   disable?: boolean;
-  setSelectedKey?: Dispatch<SetStateAction<KeyType>>;
+  setSelectedKey?: Dispatch<SetStateAction<string>>;
 }
 
 const MenuItem: React.FunctionComponent<MenuItemProps> = (props): ReactElement => {

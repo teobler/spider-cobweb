@@ -1,17 +1,17 @@
 import React, { Dispatch, ReactElement, SetStateAction } from 'react';
 import combineClass from '../../utils/combineClass';
 import { CLASS_PREFIX } from '../constants';
-import { KeyType } from './menu';
 
 interface SubList extends React.HTMLAttributes<HTMLElement> {
-  setSelectedKey?: Dispatch<SetStateAction<KeyType>>;
-  uniqueKey?: KeyType;
+  setSelectedKey?: Dispatch<SetStateAction<string>>;
+  uniqueKey: string;
+  childUniqueKey?: string;
   selectedKey?: string;
   mode?: string;
 }
 
 const ListItem: React.FunctionComponent<SubList> = (props): ReactElement => {
-  const { setSelectedKey, selectedKey, uniqueKey, mode, onClick, children } = props;
+  const { setSelectedKey, selectedKey, uniqueKey, childUniqueKey, mode, onClick, children } = props;
   const selectedClassName =
     mode === 'horizontal' ? '' : uniqueKey === selectedKey ? `${CLASS_PREFIX}menu-item-selected` : '';
 
@@ -20,8 +20,12 @@ const ListItem: React.FunctionComponent<SubList> = (props): ReactElement => {
       onClick(event);
     }
 
-    if (setSelectedKey && uniqueKey) {
+    if (mode === 'vertical' && setSelectedKey) {
       setSelectedKey(uniqueKey);
+    }
+
+    if (mode === 'horizontal' && setSelectedKey && childUniqueKey) {
+      setSelectedKey(childUniqueKey);
     }
   };
 

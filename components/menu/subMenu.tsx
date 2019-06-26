@@ -11,13 +11,12 @@ import React, {
 import combineClass from '../../utils/combineClass';
 import { CLASS_PREFIX } from '../constants';
 import Icon from '../icon';
-import { KeyType } from './menu';
 
 interface SubMenu extends React.HTMLAttributes<HTMLElement> {
-  uniqueKey?: KeyType;
-  selectedKey?: KeyType;
+  selectedKey?: string;
+  uniqueKey: string;
   disable?: boolean;
-  setSelectedKey?: Dispatch<SetStateAction<KeyType>>;
+  setSelectedKey?: Dispatch<SetStateAction<string>>;
   mode?: string;
   openPopup?: boolean;
 }
@@ -42,12 +41,11 @@ const handleBlur = (setShowPopup: React.Dispatch<React.SetStateAction<boolean>>,
   }
 };
 
-const getUniqueKeyFromChild = (child: React.ReactElement, index: number): string | number =>
-  child.key || `submenu-list-${index}`;
+const getUniqueKeyFromChild = (child: React.ReactElement, index: number, uniqueKey: string): string => `${uniqueKey}-list-${index}`;
 
 const SubMenu: React.FunctionComponent<SubMenu> = (props): ReactElement => {
-  const { className = '', onClick, title, setSelectedKey, uniqueKey, selectedKey, disable, mode, openPopup = false, children } = props;
-  const initPopStatus = mode === 'horizontal' ? openPopup : false;
+  const { className = '', onClick, title, setSelectedKey, selectedKey, disable, mode, openPopup = false, uniqueKey, children } = props;
+  const initPopStatus = mode === 'vertical' ? openPopup : false;
   const [showPopup, setShowPopup] = useState(initPopStatus);
   const divRef = useRef<HTMLDivElement>(null);
   const disabledClassName = disable ? `${CLASS_PREFIX}menu-item-disabled` : '';
@@ -72,18 +70,12 @@ const SubMenu: React.FunctionComponent<SubMenu> = (props): ReactElement => {
 
   const renderChildren = () => {
     return React.Children.map(children, (child: React.ReactElement, index: number) => {
-      let childUniqueKey = uniqueKey;
-
-      if (mode === 'vertical') {
-        childUniqueKey = getUniqueKeyFromChild(child, index);
-      }
-
-      return React.cloneElement(child, { uniqueKey: childUniqueKey, mode, setSelectedKey, selectedKey });
+      return React.cloneElement(child, { childUniqueKey: uniqueKey, mode, setSelectedKey, selectedKey });
     });
   };
 
   return (
-    <li className={combineClass('menu-submenu', disabledClassName, className)} key={uniqueKey}>
+    <li className={combineClass('menu-submenu', disabledClassName, className)}>
       <div
         className={combineClass('menu-submenu-title', disabledTitleClassName, selectedClassName)}
         tabIndex={1}
