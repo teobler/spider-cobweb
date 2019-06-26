@@ -62,7 +62,9 @@ describe('<Menu />', () => {
   it('menuItems can be disable and selected', () => {
     const wrapper = mount(
       <Menu defaultSelectedKey="item2">
-        <MenuItem uniqueKey="item1" disable={true}>item1</MenuItem>
+        <MenuItem uniqueKey="item1" disable={true}>
+          item1
+        </MenuItem>
         <MenuItem uniqueKey="item2">item2</MenuItem>
         <MenuItem uniqueKey="item3">item3</MenuItem>
         <MenuItem uniqueKey="item4">item4</MenuItem>
@@ -107,8 +109,12 @@ describe('<Menu />', () => {
       const clickHandler = jest.fn();
       const wrapper = mount(
         <Menu>
-          <MenuItem uniqueKey="item1" onClick={clickHandler}>item1</MenuItem>
-          <MenuItem uniqueKey="item2" disable={true}>item2</MenuItem>
+          <MenuItem uniqueKey="item1" onClick={clickHandler}>
+            item1
+          </MenuItem>
+          <MenuItem uniqueKey="item2" disable={true}>
+            item2
+          </MenuItem>
           <MenuItem uniqueKey="item3">item3</MenuItem>
         </Menu>,
       );
@@ -133,23 +139,25 @@ describe('<Menu />', () => {
         </Menu>,
       );
 
-      expect(wrapper
-        .find('.spider-menu-submenu-container')
-        .getDOMNode()
-        .getAttribute('style'))
-        .toContain('overflow: hidden');
+      expect(
+        wrapper
+          .find('.spider-menu-submenu-container')
+          .getDOMNode()
+          .getAttribute('style'),
+      ).toContain('overflow: hidden');
       toggle(wrapper, '.spider-menu-submenu-title', 0, 'click');
-      expect(wrapper
-        .find('.spider-menu-submenu-container')
-        .getDOMNode()
-        .getAttribute('style'))
-        .toContain('overflow: visible');
+      expect(
+        wrapper
+          .find('.spider-menu-submenu-container')
+          .getDOMNode()
+          .getAttribute('style'),
+      ).toContain('overflow: visible');
     });
 
     it('should hid subMenu when blur subMenu', () => {
       const clickHandler = jest.fn();
       const wrapper = mount(
-        <Menu mode='horizontal'>
+        <Menu mode="horizontal">
           <SubMenu uniqueKey="submenu1" title="submenu title" onClick={clickHandler}>
             <SubList title="group title 1">
               <ListItem uniqueKey="1">subItem 1</ListItem>
@@ -160,26 +168,29 @@ describe('<Menu />', () => {
         </Menu>,
       );
 
-      expect(wrapper
-        .find('.spider-menu-submenu-container')
-        .getDOMNode()
-        .getAttribute('style'))
-        .toContain('overflow: hidden');
+      expect(
+        wrapper
+          .find('.spider-menu-submenu-container')
+          .getDOMNode()
+          .getAttribute('style'),
+      ).toContain('overflow: hidden');
 
       toggle(wrapper, '.spider-menu-submenu-title', 0, 'click');
       expect(clickHandler).toBeCalled();
-      expect(wrapper
-        .find('.spider-menu-submenu-container')
-        .getDOMNode()
-        .getAttribute('style'))
-        .toContain('overflow: visible');
+      expect(
+        wrapper
+          .find('.spider-menu-submenu-container')
+          .getDOMNode()
+          .getAttribute('style'),
+      ).toContain('overflow: visible');
 
       toggle(wrapper, '.spider-menu-submenu-title', 0, 'blur');
-      expect(wrapper
-        .find('.spider-menu-submenu-container')
-        .getDOMNode()
-        .getAttribute('style'))
-        .toContain('overflow: hidden');
+      expect(
+        wrapper
+          .find('.spider-menu-submenu-container')
+          .getDOMNode()
+          .getAttribute('style'),
+      ).toContain('overflow: hidden');
     });
 
     it('should not hid subMenu when mode is vertical', () => {
@@ -196,26 +207,29 @@ describe('<Menu />', () => {
         </Menu>,
       );
 
-      expect(wrapper
-        .find('.spider-menu-submenu-container')
-        .getDOMNode()
-        .getAttribute('style'))
-        .toContain('overflow: hidden');
+      expect(
+        wrapper
+          .find('.spider-menu-submenu-container')
+          .getDOMNode()
+          .getAttribute('style'),
+      ).toContain('overflow: hidden');
 
       toggle(wrapper, '.spider-menu-submenu-title', 0, 'click');
       expect(clickHandler).toBeCalled();
-      expect(wrapper
-        .find('.spider-menu-submenu-container')
-        .getDOMNode()
-        .getAttribute('style'))
-        .toContain('overflow: visible');
+      expect(
+        wrapper
+          .find('.spider-menu-submenu-container')
+          .getDOMNode()
+          .getAttribute('style'),
+      ).toContain('overflow: visible');
 
       toggle(wrapper, '.spider-menu-submenu-title', 0, 'blur');
-      expect(wrapper
-        .find('.spider-menu-submenu-container')
-        .getDOMNode()
-        .getAttribute('style'))
-        .toContain('overflow: visible');
+      expect(
+        wrapper
+          .find('.spider-menu-submenu-container')
+          .getDOMNode()
+          .getAttribute('style'),
+      ).toContain('overflow: visible');
     });
 
     it('should be selected when click listItem', () => {
@@ -224,7 +238,9 @@ describe('<Menu />', () => {
         <Menu>
           <SubMenu uniqueKey="submenu1" openPopup={true}>
             <SubList title="group title 1 - 1">
-              <ListItem uniqueKey="1-1-1" onClick={clickHandler}>subItem 1</ListItem>
+              <ListItem uniqueKey="1-1-1" onClick={clickHandler}>
+                subItem 1
+              </ListItem>
               <ListItem uniqueKey="1-1-2">subItem 2</ListItem>
               <ListItem uniqueKey="1-1-3">subItem 3</ListItem>
             </SubList>
@@ -242,12 +258,13 @@ describe('<Menu />', () => {
       expect(wrapper.find('.spider-menu-item-disabled').length).toBe(1);
       expect(wrapper.find('.spider-submenu-title-disabled').length).toBe(1);
 
-      expect(wrapper
-        .find('.spider-menu-submenu-container')
-        .at(0)
-        .getDOMNode()
-        .getAttribute('style'))
-        .toContain('overflow: visible');
+      expect(
+        wrapper
+          .find('.spider-menu-submenu-container')
+          .at(0)
+          .getDOMNode()
+          .getAttribute('style'),
+      ).toContain('overflow: visible');
 
       toggle(wrapper, '.spider-submenu-item', 0, 'click');
       expect(clickHandler).toBeCalled();

@@ -42,7 +42,18 @@ const handleBlur = (setShowPopup: React.Dispatch<React.SetStateAction<boolean>>,
 };
 
 const SubMenu: React.FunctionComponent<SubMenu> = (props): ReactElement => {
-  const { className = '', onClick, title, setSelectedKey, selectedKey, disable, mode, openPopup = false, uniqueKey, children } = props;
+  const {
+    className = '',
+    onClick,
+    title,
+    setSelectedKey,
+    selectedKey,
+    disable,
+    mode,
+    openPopup = false,
+    uniqueKey,
+    children,
+  } = props;
   const initPopStatus = mode === 'vertical' ? openPopup : false;
   const [showPopup, setShowPopup] = useState(initPopStatus);
   const divRef = useRef<HTMLDivElement>(null);
@@ -64,7 +75,7 @@ const SubMenu: React.FunctionComponent<SubMenu> = (props): ReactElement => {
       divRef.current.style.paddingBottom = '0';
       divRef.current.style.opacity = '0';
     }
-  }, [showPopup]);
+  }, [mode, showPopup]);
 
   const renderChildren = () => {
     return React.Children.map(children, (child: React.ReactElement) => {
