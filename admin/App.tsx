@@ -4,6 +4,10 @@ import Aside from '../components/layout/aside';
 import Content from '../components/layout/content';
 import Header from '../components/layout/header';
 import Layout from '../components/layout/layout';
+import ListItem from '../components/menu/listItem';
+import Menu from '../components/menu/menu';
+import SubList from '../components/menu/subList';
+import SubMenu from '../components/menu/subMenu';
 import './app.scss';
 import ButtonDemo from './example/button.demo';
 import GridDemo from './example/grid.demo';
@@ -22,30 +26,27 @@ const App: React.FunctionComponent = (): ReactElement => {
         </Header>
         <Layout className="main">
           <Aside className="aside">
-            <ul className="spider-menu">
-              <li className="spider-menu-item">
-                <div>
-                  <h4>Components</h4>
-                </div>
-                <ul className="spider-submenu">
-                  <li>
+            <Menu defaultSelectedKey="icon">
+              <SubMenu title="Components" uniqueKey="submenu" openPopup={true}>
+                <SubList>
+                  <ListItem uniqueKey="icon">
                     <Link to="/icon">icon</Link>
-                  </li>
-                  <li>
+                  </ListItem>
+                  <ListItem uniqueKey="button">
                     <Link to="/button">button</Link>
-                  </li>
-                  <li>
+                  </ListItem>
+                  <ListItem uniqueKey="layout">
                     <Link to="/layout">layout</Link>
-                  </li>
-                  <li>
+                  </ListItem>
+                  <ListItem uniqueKey="grid">
                     <Link to="/grid">grid</Link>
-                  </li>
-                  <li>
+                  </ListItem>
+                  <ListItem uniqueKey="menu">
                     <Link to="/menu">menu</Link>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+                  </ListItem>
+                </SubList>
+              </SubMenu>
+            </Menu>
           </Aside>
           <Content className="content">
             <Route path="/icon" component={IconDemo} />
