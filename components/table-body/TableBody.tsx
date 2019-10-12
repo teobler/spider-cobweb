@@ -2,12 +2,12 @@ import * as React from 'react';
 import combineClass from '../../utils/combineClass';
 import TableLvl2Context from '../table/TableLvl2Context';
 
-interface ITableHeadProps {
+interface TableHeadProps {
   component?: keyof JSX.IntrinsicElements;
   className?: string;
 }
 
-const TableBody: React.FunctionComponent<ITableHeadProps> = ({
+const TableBody: React.FunctionComponent<TableHeadProps> = ({
   component: Component = 'tbody',
   className = '',
   ...others

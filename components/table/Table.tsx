@@ -2,14 +2,14 @@ import * as React from 'react';
 import combineClass from '../../utils/combineClass';
 import TableContext from './TableContext';
 
-interface ITableProps {
+interface TableProps {
   padding?: string;
   size?: string;
   className?: string;
   component?: keyof JSX.IntrinsicElements;
 }
 
-const Table: React.FunctionComponent<ITableProps> = ({
+const Table: React.FunctionComponent<TableProps> = ({
   padding = 'default',
   size = 'medium',
   component: Component = 'table',
