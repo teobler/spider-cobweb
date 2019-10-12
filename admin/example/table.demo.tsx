@@ -1,7 +1,5 @@
 import * as React from 'react';
-import { TableBody } from '../../components/table-body/TableBody';
-import { TableHead } from '../../components/table-head/TableHead';
-import { Table } from '../../components/table/Table';
+import { Table, TableBody, TableHead } from '../../components';
 
 const TableDemo: React.FunctionComponent = () => {
   return (

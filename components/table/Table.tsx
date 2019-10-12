@@ -9,7 +9,7 @@ interface ITableProps {
   component?: keyof JSX.IntrinsicElements;
 }
 
-export const Table: React.FunctionComponent<ITableProps> = ({
+const Table: React.FunctionComponent<ITableProps> = ({
   padding = 'default',
   size = 'medium',
   component: Component = 'table',
@@ -24,3 +24,5 @@ export const Table: React.FunctionComponent<ITableProps> = ({
     </TableContext.Provider>
   );
 };
+
+export default Table;

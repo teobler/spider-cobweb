@@ -7,7 +7,7 @@ interface ITableHeadProps {
   className?: string;
 }
 
-export const TableHead: React.FunctionComponent<ITableHeadProps> = ({
+const TableHead: React.FunctionComponent<ITableHeadProps> = ({
   component: Component = 'thead',
   className = '',
   ...others
@@ -18,3 +18,5 @@ export const TableHead: React.FunctionComponent<ITableHeadProps> = ({
     </TableLvl2Context.Provider>
   );
 };
+
+export default TableHead;
