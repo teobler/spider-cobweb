@@ -14,6 +14,7 @@ import GridDemo from './example/grid.demo';
 import IconDemo from './example/icon.demo';
 import LayoutDemo from './example/layout.demo';
 import MenuDemo from './example/menu.demo';
+import TableDemo from './example/table.demo';
 
 const App: React.FunctionComponent = (): ReactElement => {
   return (
@@ -44,6 +45,9 @@ const App: React.FunctionComponent = (): ReactElement => {
                   <ListItem uniqueKey="menu">
                     <Link to="/menu">menu</Link>
                   </ListItem>
+                  <ListItem uniqueKey="table">
+                    <Link to="/table">table</Link>
+                  </ListItem>
                 </SubList>
               </SubMenu>
             </Menu>
@@ -54,6 +58,7 @@ const App: React.FunctionComponent = (): ReactElement => {
             <Route path="/layout" component={LayoutDemo} />
             <Route path="/grid" component={GridDemo} />
             <Route path="/menu" component={MenuDemo} />
+            <Route path="/table" component={TableDemo} />
           </Content>
         </Layout>
       </Layout>
