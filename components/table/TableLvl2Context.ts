@@ -1,6 +1,9 @@
 import * as React from 'react';
 
-const TableLvl2 = {};
-const TableLvl2Context = React.createContext(TableLvl2);
+export interface TableLvl2ContextProps {
+  variant: string;
+}
+const TableLvl2 = { variant: 'body' };
+const TableLvl2Context = React.createContext<TableLvl2ContextProps>(TableLvl2);
 
 export default TableLvl2Context;

@@ -4,3 +4,4 @@ export { default as TableHead } from './table-head';
 export { default as TableBody } from './table-body';
 export { default as TableFooter } from './table-footer';
 export { default as TableRow } from './table-row';
+export { default as TableCell } from './table-cell';

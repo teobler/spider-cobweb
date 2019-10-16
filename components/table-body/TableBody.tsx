@@ -13,7 +13,7 @@ const TableBody: React.FunctionComponent<TableHeadProps> = ({
   ...others
 }) => {
   return (
-    <TableLvl2Context.Provider value={{}}>
+    <TableLvl2Context.Provider value={{variant: 'body'}}>
       <Component className={combineClass('table-head', className)} {...others} />
     </TableLvl2Context.Provider>
   );

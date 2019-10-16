@@ -1,14 +1,27 @@
 import * as React from 'react';
-import { Table, TableBody, TableHead, TableRow, TableFooter } from '../../components';
+import { Table, TableBody, TableHead, TableRow, TableFooter, TableCell } from '../../components';
 
 const TableDemo: React.FunctionComponent = () => {
   return (
     <Table>
-      <TableHead>head</TableHead>
+      <TableHead>
+        <TableRow>
+          <TableCell>head left</TableCell>
+          <TableCell>head right</TableCell>
+        </TableRow>
+      </TableHead>
       <TableBody>
-        <TableRow>row</TableRow>
+        <TableRow>
+          <TableCell>left</TableCell>
+          <TableCell>right</TableCell>
+        </TableRow>
       </TableBody>
-      <TableFooter>footer</TableFooter>
+      <TableFooter>
+        <TableRow>
+          <TableCell>footer left</TableCell>
+          <TableCell>footer right</TableCell>
+        </TableRow>
+      </TableFooter>
     </Table>
   );
 };

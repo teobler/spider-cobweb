@@ -13,7 +13,7 @@ const TableFooter: React.FunctionComponent<TableFooterProps> = ({
   ...others
 }) => {
   return (
-    <TableLvl2Context.Provider value={{}}>
+    <TableLvl2Context.Provider value={{variant: 'footer'}}>
       <Component className={combineClass('table-footer', className)} {...others} />
     </TableLvl2Context.Provider>
   );
