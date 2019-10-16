@@ -1,12 +1,13 @@
 import * as React from 'react';
-import { Table, TableBody, TableHead } from '../../components';
-import TableFooter from '../../components/table-footer/TableFooter';
+import { Table, TableBody, TableHead, TableRow, TableFooter } from '../../components';
 
 const TableDemo: React.FunctionComponent = () => {
   return (
     <Table>
       <TableHead>head</TableHead>
-      <TableBody>body</TableBody>
+      <TableBody>
+        <TableRow>row</TableRow>
+      </TableBody>
       <TableFooter>footer</TableFooter>
     </Table>
   );
