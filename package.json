@@ -36,9 +36,10 @@
     "@babel/preset-env": "^7.3.4",
     "@types/enzyme": "^3.9.0",
     "@types/jest": "^24.0.11",
-    "@types/react": "^16.8.7",
-    "@types/react-dom": "^16.8.2",
+    "@types/react": "^16.9.7",
+    "@types/react-dom": "^16.9.2",
     "@types/react-router-dom": "^5.1.0",
+    "@types/react-router": "^5.1.1",
     "@types/react-test-renderer": "^16.8.1",
     "@types/webpack-env": "^1.13.9",
     "@typescript-eslint/eslint-plugin": "^1.5.0",
@@ -80,9 +81,10 @@
   },
   "dependencies": {
     "html-webpack-plugin": "^3.2.0",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
     "react-router-dom": "^5.1.2",
+    "react-router": "^5.1.2",
     "webpack-dev-server": "^3.2.1"
   },
   "config": {
