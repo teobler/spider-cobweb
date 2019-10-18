@@ -3,5 +3,39 @@
 exports[`<Table /> should render a empty table 1`] = `
 <table
   className="spider-table"
-/>
+>
+  <thead
+    className="spider-table-head"
+  >
+    <tr
+      className="spider-table-row"
+    >
+      <td
+        className="spider-table-cell"
+      />
+    </tr>
+  </thead>
+  <tbody
+    className="spider-table-head"
+  >
+    <tr
+      className="spider-table-row"
+    >
+      <td
+        className="spider-table-cell"
+      />
+    </tr>
+  </tbody>
+  <tfoot
+    className="spider-table-footer"
+  >
+    <tr
+      className="spider-table-row"
+    >
+      <td
+        className="spider-table-cell"
+      />
+    </tr>
+  </tfoot>
+</table>
 `;
