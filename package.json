@@ -22,7 +22,8 @@
   "keywords": [],
   "husky": {
     "hooks": {
-      "pre-push": "npm test && npm run lint:fix"
+      "pre-push": "npm run build && npm test",
+      "pre-commit": "npm run lint:fix && pretty-quick --staged"
     }
   },
   "author": "teobler",
