@@ -8,6 +8,14 @@ import SubList from '../subList';
 import SubMenu from '../subMenu';
 
 describe('<Menu />', () => {
+    beforeEach(() => {
+        jest.useFakeTimers();
+    });
+
+    afterEach(() => {
+        jest.useRealTimers();
+    });
+
   it('should render a empty menu', () => {
     const menuJson = renderer.create(<Menu />).toJSON();
     expect(menuJson).toMatchSnapshot();
@@ -97,14 +105,6 @@ describe('<Menu />', () => {
       wrapper.update();
     };
 
-    beforeEach(() => {
-      jest.useFakeTimers();
-    });
-
-    afterEach(() => {
-      jest.useRealTimers();
-    });
-
     it('should be selected when click menu item', () => {
       const clickHandler = jest.fn();
       const wrapper = mount(
@@ -193,7 +193,7 @@ describe('<Menu />', () => {
       ).toContain('overflow: hidden');
     });
 
-    it('should not hid subMenu when mode is vertical', () => {
+    it('should not hide subMenu when mode is vertical', () => {
       const clickHandler = jest.fn();
       const wrapper = mount(
         <Menu>
